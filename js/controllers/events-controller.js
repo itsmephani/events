@@ -4,7 +4,7 @@ app.controller('EventsController', ['$scope', '$filter', function($scope, $filte
         id: 1,
         title: 'Alfa conf',
         venue: 'Red School of Arts',
-        city: 'Bangalore',
+        city: 'Vijayawada',
         date: '12th Feb 2014',
         thumbUrl: 'http://th09.deviantart.net/fs70/200H/i/2010/362/5/1/official_deviantart_logo_by_digitaldecay-dhck.jpg',
         posterUrl: 'http://th08.deviantart.net/fs71/PRE/f/2013/185/7/a/bubbles___just_bubbles_by_viperv6-d6byhtp.jpg',
@@ -178,4 +178,8 @@ app.controller('EventsController', ['$scope', '$filter', function($scope, $filte
     $scope.events = $filter('orderBy')($scope.events, function(event){
       return Date.parse(event['date']);
     });  
+
+    $scope.orderbySeatsLeft = function(){
+      $scope.events = $filter('orderBy')($scope.events, 'seatsLeft')
+    }
 }]);
