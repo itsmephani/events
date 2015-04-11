@@ -8,7 +8,7 @@ app.directive('events', function($compile, $filter) {
       outputHtml += `<input type="text" ng-model="q"  ng-keyup="orderbySeatsLeft()" class="form-control" placeholder="search.."/>`;
       outputHtml += "<div class='list-group'>";
       outputHtml += `<div ng-repeat="event in events | filter:q"><a data-target=".modal" data-toggle="modal" href="#" class="list-group-item" ng-click="setEvent(event.id) "> 
-          <h4 class="list-group-item-heading">{{event.seatsLeft}} {{event.title}}<span class="pull-right">{{ event.date }}</span></h4>
+          <h4 class="list-group-item-heading">{{event.title}}<span class="pull-right">{{ event.date }}</span></h4>
           <p class="list-group-item-text"> Venue: {{event.venue}}
           <br/><br/><span ng-if="event.speakers">Speakers: {{event.speakers}}</span>
           </p></a>`;      
