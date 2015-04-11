@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/angular.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <script type="text/javascript">
+    var app = angular.module('app', []);
+  </script>
+  <script src="js/controllers/events-controller.js"></script>
+  <script src="js/directives/events.js"></script>
+</head>
+<body ng-app="app">
+  <div ng-controller="EventsController">
+    <div events="events">      
+    </div>    
+  </div>
+</body>
+</html>
