@@ -171,5 +171,11 @@ app.controller('EventsController', ['$scope', '$filter', function($scope, $filte
         isTopEvent: false
     }
     ];
-    $scope.events = $filter('orderBy')($scope.events, 'date');
+    $scope.date = function(event){
+        var date = new Date(event.date);
+        return date;
+    }
+    $scope.events = $filter('orderBy')($scope.events, function(event){
+      return Date.parse(event['date']);
+    });  
 }]);
