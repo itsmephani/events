@@ -62,6 +62,15 @@ app.directive('events', function($compile, $filter) {
           }
         }
       }
+
+      scope.events = $filter('orderBy')(scope.events, function(event){
+        return Date.parse(event['date']);
+      });  
+
+      scope.orderbySeatsLeft = function(){
+        scope.events = $filter('orderBy')(scope.events, 'seatsLeft')
+      }
+
     }
   };
-});  
+});

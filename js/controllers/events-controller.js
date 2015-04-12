@@ -1,4 +1,4 @@
-app.controller('EventsController', ['$scope', '$filter', function($scope, $filter){
+app.controller('EventsController', ['$scope', function($scope){
     $scope.events = [
     {
         id: 1,
@@ -171,15 +171,5 @@ app.controller('EventsController', ['$scope', '$filter', function($scope, $filte
         isTopEvent: false
     }
     ];
-    $scope.date = function(event){
-        var date = new Date(event.date);
-        return date;
-    }
-    $scope.events = $filter('orderBy')($scope.events, function(event){
-      return Date.parse(event['date']);
-    });  
-
-    $scope.orderbySeatsLeft = function(){
-      $scope.events = $filter('orderBy')($scope.events, 'seatsLeft')
-    }
+    
 }]);
